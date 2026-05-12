@@ -22,10 +22,10 @@
       content="La central sindical amenaza con acudir al juzgado si no se resuelve la situación.">
 
 <meta property="og:image"
-      content="https://radarnorte.netlify.app/imagenes/1.jpg">
+      content="https://radareuskadi.netlify.app/imagenes/1.jpg">
 
 <meta property="og:image:secure_url"
-      content="https://radarnorte.netlify.app/imagenes/1.jpg">
+      content="https://radareuskadi.netlify.app/imagenes/1.jpg">
 
 <meta property="og:image:type"
       content="image/jpeg">
@@ -37,7 +37,7 @@
       content="630">
 
 <meta property="og:url"
-      content="https://radarnorte.netlify.app/">
+      content="https://radareuskadi.netlify.app/">
 
 <meta property="og:locale"
       content="es_ES">
@@ -54,7 +54,7 @@
       content="La central sindical amenaza con acudir al juzgado si no se resuelve la situación.">
 
 <meta name="twitter:image"
-      content="https://radarnorte.netlify.app/imagenes/1.jpg">
+      content="https://radareuskadi.netlify.app/imagenes/1.jpg">
 
 <style>
 
@@ -325,6 +325,56 @@ body{
   font-size:0.98rem;
 }
 
+/* OPINIÓN */
+
+.opinion{
+  padding:0 30px 30px 30px;
+}
+
+.opinion-caja{
+  background:white;
+  border-radius:10px;
+  padding:24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  border-left:6px solid #0057b8;
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
+}
+
+.opinion-texto{
+  flex:1;
+}
+
+.opinion-rotulo{
+  color:#0057b8;
+  font-size:0.72rem;
+  font-weight:bold;
+  letter-spacing:1px;
+  margin-bottom:10px;
+}
+
+.opinion-titulo{
+  font-family:Georgia, serif;
+  font-size:1.7rem;
+  margin-bottom:14px;
+}
+
+.opinion-extracto{
+  font-size:1rem;
+  line-height:1.7;
+  color:#444;
+  max-width:700px;
+}
+
+.opinion-imagen{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
 /* FOOTER */
 
 .footer{
@@ -456,6 +506,25 @@ body{
     font-size:1.18rem;
   }
 
+  .opinion{
+    padding:0 16px 20px 16px;
+  }
+
+  .opinion-caja{
+    flex-direction:column-reverse;
+    align-items:flex-start;
+    padding:18px;
+  }
+
+  .opinion-imagen{
+    width:70px;
+    height:70px;
+  }
+
+  .opinion-titulo{
+    font-size:1.35rem;
+  }
+
   .footer{
     padding:18px 16px;
   }
@@ -566,112 +635,100 @@ body{
   <div class="secundarias-grid">
 
     <article class="noticia-secundaria">
-
       <img src="imagenes/2.jpg" id="imgSec1" alt="">
-
       <div class="noticia-contenido">
-
         <a href="noticia2.html" class="link-titular">
           <h3 id="titSec1"></h3>
         </a>
-
         <div class="autor-sec">R.E.</div>
-
         <p id="txtSec1"></p>
-
       </div>
-
     </article>
 
     <article class="noticia-secundaria">
-
       <img src="imagenes/3.jpg" id="imgSec2" alt="">
-
       <div class="noticia-contenido">
-
         <a href="noticia3.html" class="link-titular">
           <h3 id="titSec2"></h3>
         </a>
-
         <div class="autor-sec">R.E.</div>
-
         <p id="txtSec2"></p>
-
       </div>
-
     </article>
 
     <article class="noticia-secundaria">
-
       <img src="imagenes/4.jpg" id="imgSec3" alt="">
-
       <div class="noticia-contenido">
-
         <a href="noticia4.html" class="link-titular">
           <h3 id="titSec3"></h3>
         </a>
-
         <div class="autor-sec">R.E.</div>
-
         <p id="txtSec3"></p>
-
       </div>
-
     </article>
 
     <article class="noticia-secundaria">
-
       <img src="imagenes/5.jpg" id="imgSec4" alt="">
-
       <div class="noticia-contenido">
-
         <a href="noticia5.html" class="link-titular">
           <h3 id="titSec4"></h3>
         </a>
-
         <div class="autor-sec">R.E.</div>
-
         <p id="txtSec4"></p>
-
       </div>
-
     </article>
 
     <article class="noticia-secundaria">
-
       <img src="imagenes/6.jpg" id="imgSec5" alt="">
-
       <div class="noticia-contenido">
-
         <a href="noticia6.html" class="link-titular">
           <h3 id="titSec5"></h3>
         </a>
-
         <div class="autor-sec">R.E.</div>
-
         <p id="txtSec5"></p>
-
       </div>
-
     </article>
 
     <article class="noticia-secundaria">
-
       <img src="imagenes/7.jpg" id="imgSec6" alt="">
-
       <div class="noticia-contenido">
-
         <a href="noticia7.html" class="link-titular">
           <h3 id="titSec6"></h3>
         </a>
-
         <div class="autor-sec">R.E.</div>
-
         <p id="txtSec6"></p>
+      </div>
+    </article>
 
+  </div>
+
+</section>
+
+<section class="opinion">
+
+  <div class="opinion-caja">
+
+    <div class="opinion-texto">
+
+      <div class="opinion-rotulo">
+        OPINIÓN
       </div>
 
-    </article>
+      <h3 class="opinion-titulo">
+        Nombre
+      </h3>
+
+      <p class="opinion-extracto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vestibulum viverra, mauris at consequat feugiat,
+        sapien turpis luctus nunc, sit amet volutpat.
+      </p>
+
+    </div>
+
+    <img class="opinion-imagen"
+         src="imagenes/logo.png"
+         alt="Opinión">
 
   </div>
 
