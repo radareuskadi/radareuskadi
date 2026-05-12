@@ -1,0 +1,42 @@
+{
+  "principal": {
+    "titular": "ErNE denuncia graves incumplimientos en el acuerdo regulador firmado en 2025",
+    "subtitulo": "La central sindical amenaza con acudir al juzgado si no se resuelve la situación.",
+    "imagen": "imagenes/1.jpg",
+    "pieFoto": "ErNE firmando el acuerdo en el año 2025",
+    "frase": "La paz social, en entredicho.",
+    "texto": "Los graves y reiterados incumplimientos de lo pactado en el acuerdo de 2025, hacen que la central sindical, mayoritaria en afiliación en la Euskal Polizia, haya cortado cualquier tipo de acercamiento a las mesas de negociación del Departamento de seguridad y se plantee subir el tono con concentraciones y denuncias en los juzgados."
+  },
+  "secundarias": [
+    {
+      "titular": "ErNE denuncia “trato esclavista y vejatorio” dentro del Servicio de Atención de Emergencias",
+      "texto": "El sindicato de la Ertzaintza lleva años denunciando, comportamiento “arbitrario, despótico y prepotente” de uno de los máximos cargos de SADAE",
+      "imagen": "imagenes/2.jpg"
+    },
+    {
+      "titular": "La Ertzaintza desaloja Elizatxo 15 y el Ayuntamiento procederá a su expropiación",
+      "texto": "Los propietarios aseguran haber vivido una agonía desde que la vivienda quedó fuera de ordenación con el Plan General de 2015, en el edificio que fue desalojado con la intervención de los BBT",
+      "imagen": "imagenes/3.jpg"
+    },
+    {
+      "titular": "Ertzaintza y Policía Local de Durango firman un convenio para mejorar la seguridad",
+      "texto": "El operativo busca mejorar la coordinación y reforzar la seguridad en eventos multitudinarios durante el verano.",
+      "imagen": "imagenes/4.jpg"
+    },
+    {
+      "titular": "Ertzaintza y policías locales intensifican la vigilancia de las distracciones al volante este fin de semana",
+      "texto": "En 2025 el 40% de los fallecidos en accidente de tráfico en Euskadi fue por conducción distraída o desatenta como factor principal",
+      "imagen": "imagenes/5.jpg"
+    },
+    {
+      "titular": "ErNE alerta de nuevas pintadas contra aspirantes a la Ertzaintza en San Sebastián",
+      "texto": "Denuncia nuevas pintadas contra opositores a la Ertzaintza en San Sebastián y reclama una respuesta firme del Gobierno Vasco y de EH Bildu.",
+      "imagen": "imagenes/6.jpg"
+    },
+    {
+      "titular": "La Ertzaintza investigará las 120 denuncias por el fiasco de la Lotería de Navidad de Igorre",
+      "texto": "\"En el caso de que se llegue a una conclusión que pueda dar indicios de un delito penal, ponerlo en manos de la Justicia», adelanta Bingen Zupiria\"",
+      "imagen": "imagenes/7.jpg"
+    }
+  ]
+}

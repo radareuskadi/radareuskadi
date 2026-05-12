@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editor Total Noticias + HTML OG</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:40px;
+    background:#edf2f7;
+    font-family:Arial,sans-serif;
+}
+
+.contenedor{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+}
+
+h1{
+    margin-top:0;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:16px;
+    font-weight:bold;
+}
+
+input, textarea{
+    width:100%;
+    box-sizing:border-box;
+    padding:12px;
+    margin-top:6px;
+    border-radius:8px;
+    border:1px solid #cfd6de;
+    font-size:15px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.bloque{
+    margin-top:35px;
+    padding:25px;
+    border-radius:14px;
+    background:#f8fafc;
+    border:1px solid #d8e0ea;
+}
+
+.botones{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+button{
+    background:#0b5ed7;
+    color:white;
+    border:none;
+    padding:15px 24px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#084298;
+}
+
+#resultado{
+    margin-top:35px;
+    background:#111827;
+    color:#00ff99;
+    padding:25px;
+    border-radius:12px;
+    white-space:pre-wrap;
+    overflow:auto;
+    max-height:700px;
+    font-family:Consolas, monospace;
+}
+
+.info{
+    background:#e8f1ff;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>Editor Total Noticias + HTML OG</h1>
+
+<div class="info">
+Carga primero el JSON y después el HTML plantilla.
+El sistema generará automáticamente:
+- JSON actualizado
+- HTML FINAL con metas OG y Twitter actualizadas
+</div>
+
+<label>1. Seleccionar JSON</label>
+<input type="file" id="archivoJSON" accept=".json">
+
+<label>2. Seleccionar HTML plantilla</label>
+<input type="file" id="archivoHTML" accept=".html">
+
+<div id="formularios"></div>
+
+<div class="botones">
+
+<button onclick="generarTodo()">
+Generar HTML + JSON
+</button>
+
+<button onclick="descargarHTML()">
+Descargar HTML Final
+</button>
+
+<button onclick="descargarJSON()">
+Descargar JSON Final
+</button>
+
+</div>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+let datosJSON = null;
+let htmlPlantilla = '';
+let htmlFinal = '';
+
+/* =========================
+   CARGAR JSON
+========================= */
+
+document.getElementById('archivoJSON')
+.addEventListener('change', function(event){
+
+    const archivo = event.target.files[0];
+
+    if(!archivo) return;
+
+    const lector = new FileReader();
+
+    lector.onload = function(e){
+
+        try{
+
+            datosJSON = JSON.parse(e.target.result);
+
+            crearFormulario();
+
+        }catch(error){
+
+            alert("JSON inválido");
+
+        }
+
+    };
+
+    lector.readAsText(archivo);
+
+});
+
+/* =========================
+   CARGAR HTML
+========================= */
+
+document.getElementById('archivoHTML')
+.addEventListener('change', function(event){
+
+    const archivo = event.target.files[0];
+
+    if(!archivo) return;
+
+    const lector = new FileReader();
+
+    lector.onload = function(e){
+
+        htmlPlantilla = e.target.result;
+
+        alert("HTML cargado correctamente");
+
+    };
+
+    lector.readAsText(archivo);
+
+});
+
+/* =========================
+   CREAR FORMULARIO
+========================= */
+
+function crearFormulario(){
+
+    const contenedor = document.getElementById('formularios');
+
+    contenedor.innerHTML = '';
+
+    if(datosJSON.principal){
+
+        const p = datosJSON.principal;
+
+        contenedor.innerHTML += `
+
+        <div class="bloque">
+
+            <h2>Noticia Principal</h2>
+
+            <label>Titular</label>
+            <input type="text" id="p_titular" value="${p.titular || ''}">
+
+            <label>Subtítulo</label>
+            <input type="text" id="p_subtitulo" value="${p.subtitulo || ''}">
+
+            <label>Imagen</label>
+            <input type="text" id="p_imagen" value="${p.imagen || ''}">
+
+            <label>Pie de Foto</label>
+            <input type="text" id="p_pieFoto" value="${p.pieFoto || ''}">
+
+            <label>Frase</label>
+            <textarea id="p_frase">${p.frase || ''}</textarea>
+
+            <label>Texto</label>
+            <textarea id="p_texto">${p.texto || ''}</textarea>
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+/* =========================
+   GENERAR TODO
+========================= */
+
+function generarTodo(){
+
+    if(!datosJSON){
+
+        alert("Carga el JSON");
+        return;
+
+    }
+
+    if(!htmlPlantilla){
+
+        alert("Carga el HTML plantilla");
+        return;
+
+    }
+
+    /* ==========
+       ACTUALIZAR JSON
+    ========== */
+
+    datosJSON.principal.titular =
+        document.getElementById('p_titular').value;
+
+    datosJSON.principal.subtitulo =
+        document.getElementById('p_subtitulo').value;
+
+    datosJSON.principal.imagen =
+        document.getElementById('p_imagen').value;
+
+    datosJSON.principal.pieFoto =
+        document.getElementById('p_pieFoto').value;
+
+    datosJSON.principal.frase =
+        document.getElementById('p_frase').value;
+
+    datosJSON.principal.texto =
+        document.getElementById('p_texto').value;
+
+    /* ==========
+       GENERAR HTML FINAL
+    ========== */
+
+    htmlFinal = htmlPlantilla;
+
+    /* TITLE */
+
+    htmlFinal = htmlFinal.replace(
+        /<title>[\s\S]*?<\/title>/i,
+        `<title>${datosJSON.principal.titular}</title>`
+    );
+
+    /* OG TITLE */
+
+    htmlFinal = htmlFinal.replace(
+        /<meta property="og:title"[\s\S]*?content=".*?">/i,
+        `<meta property="og:title" content="${datosJSON.principal.titular}">`
+    );
+
+    /* OG DESCRIPTION */
+
+    htmlFinal = htmlFinal.replace(
+        /<meta property="og:description"[\s\S]*?content=".*?">/i,
+        `<meta property="og:description" content="${datosJSON.principal.subtitulo}">`
+    );
+
+    /* OG IMAGE */
+
+    htmlFinal = htmlFinal.replace(
+        /<meta property="og:image"[\s\S]*?content=".*?">/i,
+        `<meta property="og:image" content="${datosJSON.principal.imagen}">`
+    );
+
+    /* TWITTER TITLE */
+
+    htmlFinal = htmlFinal.replace(
+        /<meta name="twitter:title"[\s\S]*?content=".*?">/i,
+        `<meta name="twitter:title" content="${datosJSON.principal.titular}">`
+    );
+
+    /* TWITTER DESCRIPTION */
+
+    htmlFinal = htmlFinal.replace(
+        /<meta name="twitter:description"[\s\S]*?content=".*?">/i,
+        `<meta name="twitter:description" content="${datosJSON.principal.subtitulo}">`
+    );
+
+    /* TWITTER IMAGE */
+
+    htmlFinal = htmlFinal.replace(
+        /<meta name="twitter:image"[\s\S]*?content=".*?">/i,
+        `<meta name="twitter:image" content="${datosJSON.principal.imagen}">`
+    );
+
+    /* ==========
+       MOSTRAR RESULTADO
+    ========== */
+
+    document.getElementById('resultado').textContent =
+        htmlFinal;
+
+}
+
+/* =========================
+   DESCARGAR HTML
+========================= */
+
+function descargarHTML(){
+
+    if(!htmlFinal){
+
+        alert("Primero genera el HTML");
+        return;
+
+    }
+
+    const blob = new Blob([htmlFinal], {
+        type:'text/html'
+    });
+
+    const enlace = document.createElement('a');
+
+    enlace.href = URL.createObjectURL(blob);
+
+    enlace.download = 'index1.html';
+
+    enlace.click();
+
+}
+
+/* =========================
+   DESCARGAR JSON
+========================= */
+
+function descargarJSON(){
+
+    if(!datosJSON){
+
+        alert("No hay JSON");
+        return;
+
+    }
+
+    const blob = new Blob(
+        [JSON.stringify(datosJSON, null, 2)],
+        {type:'application/json'}
+    );
+
+    const enlace = document.createElement('a');
+
+    enlace.href = URL.createObjectURL(blob);
+
+    enlace.download = 'noticias.json';
+
+    enlace.click();
+
+}
+
+</script>
+
+</body>
+
+</html>
