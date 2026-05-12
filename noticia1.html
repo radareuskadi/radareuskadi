@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ErNE denuncia graves incumplimientos en el acuerdo regulador firmado en 2025</title>
+<title>RADAR EUSKADI</title>
 
 <!-- OPEN GRAPH -->
 
@@ -14,17 +14,16 @@
 
 <meta property="og:site_name" content="RADAR EUSKADI">
 
-<meta property="og:title"
-content="ErNE denuncia graves incumplimientos en el acuerdo regulador firmado en 2025">
+<meta property="og:title" content="RADAR EUSKADI">
 
 <meta property="og:description"
-content="La central sindical amenaza con acudir al juzgado si no se resuelve la situación.">
+content="Actualidad de seguridad y policía.">
 
 <meta property="og:image"
-content="https://erne-tresnak-afi.neocities.org/imagenes/1.jpg">
+content="imagenes/1.jpg">
 
 <meta property="og:image:secure_url"
-content="https://erne-tresnak-afi.neocities.org/imagenes/1.jpg">
+content="imagenes/1.jpg">
 
 <meta property="og:image:type"
 content="image/jpeg">
@@ -35,9 +34,6 @@ content="1200">
 <meta property="og:image:height"
 content="630">
 
-<meta property="og:url"
-content="https://www.otxoko.com/noticia1.html">
-
 <meta property="og:locale"
 content="es_ES">
 
@@ -47,13 +43,13 @@ content="es_ES">
 content="summary_large_image">
 
 <meta name="twitter:title"
-content="ErNE denuncia graves incumplimientos en el acuerdo regulador firmado en 2025">
+content="RADAR EUSKADI">
 
 <meta name="twitter:description"
-content="La central sindical amenaza con acudir al juzgado si no se resuelve la situación.">
+content="Actualidad de seguridad y policía.">
 
 <meta name="twitter:image"
-content="https://erne-tresnak-afi.neocities.org/imagenes/1.jpg">
+content="imagenes/1.jpg">
 
 <style>
 
@@ -193,8 +189,6 @@ body{
   color:#222;
   max-width:900px;
 }
-
-/* FOOTER */
 
 .footer{
   width:100%;
@@ -341,47 +335,23 @@ body{
 
 <section class="noticia">
 
-  <h1 class="titular">
-    ErNE denuncia graves incumplimientos en el acuerdo regulador firmado en 2025
-  </h1>
+  <h1 class="titular"></h1>
 
   <div class="autor">
     R.E.
   </div>
 
-  <h2 class="subtitulo">
-    La central sindical amenaza con acudir al juzgado si no se resuelve la situación.
-  </h2>
+  <h2 class="subtitulo"></h2>
 
   <img class="imagen"
        src="imagenes/1.jpg"
        alt="Imagen noticia">
 
-  <div class="pie-foto">
-    Imagen de archivo relacionada con la noticia.
-  </div>
+  <div class="pie-foto"></div>
 
-  <div class="frase">
-    “La organización considera inadmisible el retraso acumulado y reclama soluciones inmediatas.”
-  </div>
+  <div class="frase"></div>
 
-  <div class="texto">
-
-    El sindicato ErNE ha denunciado públicamente nuevos incumplimientos en el acuerdo regulador firmado durante el año 2025, una situación que, según la organización, está generando un profundo malestar entre numerosos agentes.
-
-    <br><br>
-
-    El comunicado difundido por la central sindical señala que varias de las medidas comprometidas continúan sin aplicarse pese a haber sido pactadas oficialmente hace meses. Entre ellas destacan cuestiones relacionadas con condiciones laborales, compensaciones y planificación operativa.
-
-    <br><br>
-
-    Desde ErNE aseguran que la situación ha alcanzado un punto límite y no descartan acudir a la vía judicial si no se produce una respuesta inmediata por parte de la administración competente.
-
-    <br><br>
-
-    El sindicato considera que la falta de avances está deteriorando la confianza de la plantilla y reclama una solución urgente que permita desbloquear el conflicto y cumplir íntegramente los compromisos adquiridos.
-
-  </div>
+  <div class="texto"></div>
 
 </section>
 
@@ -400,6 +370,83 @@ body{
 </div>
 
 <script>
+
+async function cargarNoticia() {
+
+  try {
+
+    const respuesta =
+      await fetch('noticias.json?t=' + Date.now());
+
+    const datos = await respuesta.json();
+
+    const noticia = datos.principal;
+
+    document.querySelector('.titular').innerText =
+      noticia.titular || '';
+
+    document.querySelector('.subtitulo').innerText =
+      noticia.subtitulo || '';
+
+    document.querySelector('.imagen').src =
+      'imagenes/1.jpg';
+
+    document.querySelector('.pie-foto').innerText =
+      noticia.pieFoto || '';
+
+    document.querySelector('.frase').innerText =
+      noticia.frase || '';
+
+    document.querySelector('.texto').innerHTML =
+      (noticia.texto || '').replace(/\n/g, '<br><br>');
+
+    /* META TAGS */
+
+    document.title =
+      noticia.titular || 'RADAR EUSKADI';
+
+    document.querySelector('meta[property="og:title"]')
+      .setAttribute('content',
+        noticia.titular || '');
+
+    document.querySelector('meta[property="og:description"]')
+      .setAttribute('content',
+        noticia.subtitulo || '');
+
+    document.querySelector('meta[property="og:image"]')
+      .setAttribute('content',
+        'imagenes/1.jpg');
+
+    document.querySelector('meta[property="og:image:secure_url"]')
+      .setAttribute('content',
+        'imagenes/1.jpg');
+
+    document.querySelector('meta[name="twitter:title"]')
+      .setAttribute('content',
+        noticia.titular || '');
+
+    document.querySelector('meta[name="twitter:description"]')
+      .setAttribute('content',
+        noticia.subtitulo || '');
+
+    document.querySelector('meta[name="twitter:image"]')
+      .setAttribute('content',
+        'imagenes/1.jpg');
+
+  }
+
+  catch(error){
+
+    console.error(
+      'Error cargando noticias.json',
+      error
+    );
+
+  }
+
+}
+
+cargarNoticia();
 
 const hoy = new Date();
 

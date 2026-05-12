@@ -12,13 +12,15 @@
 <meta property="og:site_name" content="RADAR EUSKADI">
 
 <meta property="og:title" content="RADAR EUSKADI">
-<meta property="og:description" content="Actualidad policial y de seguridad">
+
+<meta property="og:description"
+content="Actualidad de seguridad y policía.">
 
 <meta property="og:image"
-content="https://erne-tresnak-afi.neocities.org/imagenes/4.jpg">
+content="imagenes/4.jpg">
 
 <meta property="og:image:secure_url"
-content="https://erne-tresnak-afi.neocities.org/imagenes/4.jpg">
+content="imagenes/4.jpg">
 
 <meta property="og:image:type"
 content="image/jpeg">
@@ -29,17 +31,20 @@ content="1200">
 <meta property="og:image:height"
 content="630">
 
-<meta property="og:url"
-content="https://www.otxoko.com/noticia4.html">
-
 <meta property="og:locale"
 content="es_ES">
 
 <meta name="twitter:card"
 content="summary_large_image">
 
+<meta name="twitter:title"
+content="RADAR EUSKADI">
+
+<meta name="twitter:description"
+content="Actualidad de seguridad y policía.">
+
 <meta name="twitter:image"
-content="https://erne-tresnak-afi.neocities.org/imagenes/4.jpg">
+content="imagenes/4.jpg">
 
 <style>
 
@@ -66,7 +71,7 @@ body{
 }
 
 .cabecera{
-  padding:8px 28px 4px 28px;
+  padding:4px 28px 2px 28px;
   background:white;
 }
 
@@ -74,7 +79,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:34px;
+  gap:25px;
 }
 
 .bloque-texto{
@@ -102,8 +107,8 @@ body{
 }
 
 .logo-imagen{
-  width:48%;
-  max-height:260px;
+  width:50%;
+  max-height:240px;
   object-fit:contain;
   display:block;
 }
@@ -159,6 +164,13 @@ body{
   object-fit:cover;
 }
 
+.pie-foto{
+  font-size:0.78rem;
+  color:#666;
+  margin-bottom:24px;
+  font-family:Arial;
+}
+
 .frase{
   font-size:1.15rem;
   font-weight:bold;
@@ -181,17 +193,20 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:20px;
 }
 
 .footer-texto{
   font-family:Arial, sans-serif;
   font-size:0.78rem;
   color:white;
+  letter-spacing:0.3px;
 }
 
 .footer-logo{
   height:42px;
   object-fit:contain;
+  display:block;
 }
 
 @media(max-width:700px){
@@ -228,8 +243,8 @@ body{
   }
 
   .logo-imagen{
-    width:58%;
-    max-height:165px;
+    width:55%;
+    max-height:140px;
   }
 
   .fecha{
@@ -252,6 +267,7 @@ body{
 
   .subtitulo{
     font-size:1.08rem;
+    margin-bottom:18px;
   }
 
   .frase{
@@ -314,22 +330,23 @@ body{
 
 <section class="noticia">
 
-  <h1 class="titular" id="titular"></h1>
+  <h1 class="titular"></h1>
 
   <div class="autor">
     R.E.
   </div>
 
-  <h2 class="subtitulo" id="subtitulo"></h2>
+  <h2 class="subtitulo"></h2>
 
   <img class="imagen"
-       id="imagen"
-       src=""
+       src="imagenes/4.jpg"
        alt="Imagen noticia">
 
-  <div class="frase" id="frase"></div>
+  <div class="pie-foto"></div>
 
-  <div class="texto" id="texto"></div>
+  <div class="frase"></div>
+
+  <div class="texto"></div>
 
 </section>
 
@@ -349,6 +366,88 @@ body{
 
 <script>
 
+async function cargarNoticia() {
+
+  try {
+
+    const respuesta =
+      await fetch('noticias.json?t=' + Date.now());
+
+    const datos =
+      await respuesta.json();
+
+    const noticia =
+      datos.secundarias.find(n =>
+        n.imagen === "imagenes/4.jpg"
+      );
+
+    if(!noticia) return;
+
+    document.querySelector('.titular').innerText =
+      noticia.titular || '';
+
+    document.querySelector('.subtitulo').innerText =
+      noticia.subtitulo || '';
+
+    document.querySelector('.imagen').src =
+      'imagenes/4.jpg';
+
+    document.querySelector('.pie-foto').innerText =
+      noticia.pieFoto || '';
+
+    document.querySelector('.frase').innerText =
+      noticia.frase || '';
+
+    document.querySelector('.texto').innerHTML =
+      (noticia.texto || '')
+      .replace(/\n/g,'<br><br>');
+
+    document.title =
+      noticia.titular || 'RADAR EUSKADI';
+
+    document.querySelector('meta[property="og:title"]')
+      .setAttribute('content',
+        noticia.titular || '');
+
+    document.querySelector('meta[property="og:description"]')
+      .setAttribute('content',
+        noticia.subtitulo || '');
+
+    document.querySelector('meta[property="og:image"]')
+      .setAttribute('content',
+        'imagenes/4.jpg');
+
+    document.querySelector('meta[property="og:image:secure_url"]')
+      .setAttribute('content',
+        'imagenes/4.jpg');
+
+    document.querySelector('meta[name="twitter:title"]')
+      .setAttribute('content',
+        noticia.titular || '');
+
+    document.querySelector('meta[name="twitter:description"]')
+      .setAttribute('content',
+        noticia.subtitulo || '');
+
+    document.querySelector('meta[name="twitter:image"]')
+      .setAttribute('content',
+        'imagenes/4.jpg');
+
+  }
+
+  catch(error){
+
+    console.error(
+      'Error cargando noticias.json',
+      error
+    );
+
+  }
+
+}
+
+cargarNoticia();
+
 const hoy = new Date();
 
 document.getElementById('fecha').innerText =
@@ -358,29 +457,6 @@ document.getElementById('fecha').innerText =
     month:'long',
     day:'numeric'
   });
-
-fetch('noticias.json')
-
-.then(response => response.json())
-
-.then(data => {
-
-  document.getElementById('titular').innerText =
-    data.secundarias[2].titular;
-
-  document.getElementById('subtitulo').innerText =
-    data.secundarias[2].texto;
-
-  document.getElementById('imagen').src =
-    data.secundarias[2].imagen;
-
-  document.getElementById('frase').innerText =
-    data.secundarias[2].texto;
-
-  document.getElementById('texto').innerText =
-    data.secundarias[2].texto;
-
-});
 
 </script>
 
