@@ -18,7 +18,6 @@
 <meta property="og:locale" content="es_ES">
 
 <meta name="twitter:card" content="summary_large_image">
-
 <meta property="og:title" content="RADAR EUSKADI">
 <meta property="og:description" content="Información policial y de seguridad actualizada">
 <meta property="og:image" content="imagenes/1.jpg">
@@ -29,313 +28,264 @@
 
 <style>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  background:#dfe4ea;
-  font-family:Arial,Helvetica,sans-serif;
-  color:#111;
+background:#dfe4ea;
+font-family:Arial,Helvetica,sans-serif;
+color:#111;
 }
 
 .contenedor{
-  width:100%;
-  max-width:1280px;
-  margin:auto;
-  background:white;
-  min-height:100vh;
+width:100%;
+max-width:1280px;
+margin:auto;
+background:white;
+min-height:100vh;
 }
 
 .ultima-hora{
-  width:100%;
-  background:#b30000;
-  color:white;
-  font-size:.78rem;
-  padding:9px 22px;
-  font-weight:bold;
-  letter-spacing:.5px;
-  text-transform:uppercase;
+background:#b30000;
+color:white;
+font-size:.78rem;
+padding:9px 22px;
+font-weight:bold;
+letter-spacing:.5px;
+text-transform:uppercase;
 }
 
 .cabecera{
-  width:100%;
-  background:#002b5c;
-  color:white;
-  border-bottom:5px solid #0057b8;
+background:#002b5c;
+color:white;
+border-bottom:5px solid #0057b8;
 }
 
 .cabecera-superior{
-  width:100%;
-  max-width:1280px;
-  margin:auto;
-  padding:18px 42px 8px;
+padding:18px 42px 8px;
 }
 
 .logo-zona{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
 }
 
 .logo-texto{
-  font-size:3rem;
-  font-weight:900;
-  line-height:.9;
+font-size:3rem;
+font-weight:900;
+line-height:.9;
 }
 
 .sublogo{
-  margin-top:6px;
-  color:#c8d3df;
+margin-top:6px;
+color:#c8d3df;
 }
 
 .logo-imagen{
-  width:220px;
+width:220px;
 }
 
 .barra-inferior{
-  padding:0 42px 14px;
-  display:flex;
-  justify-content:space-between;
+padding:0 42px 14px;
+display:flex;
+justify-content:space-between;
 }
 
 .fecha{
-  color:#c8d3df;
-  font-size:.78rem;
+color:#c8d3df;
+font-size:.78rem;
 }
 
 .menu{
-  display:flex;
-  gap:18px;
+display:flex;
+gap:18px;
 }
 
 .menu a{
-  color:#c8d3df;
-  text-decoration:none;
-  font-size:.72rem;
-  font-weight:bold;
+color:#c8d3df;
+text-decoration:none;
+font-size:.72rem;
+font-weight:bold;
 }
 
 .hero{
-  position:relative;
+position:relative;
 }
 
 .hero img{
-  width:100%;
-  height:650px;
-  object-fit:cover;
+width:100%;
+height:650px;
+object-fit:cover;
 }
 
 .hero-overlay{
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  padding:50px 42px;
-  background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
-}
-
-.hero-titular{
-  font-family:Georgia,serif;
-  color:white;
-  font-size:2.2rem;
-  max-width:920px;
-  margin-bottom:12px;
-}
-
-.hero-subtitulo{
-  color:#eee;
-  max-width:760px;
-  line-height:1.6;
-
-  display:-webkit-box;
-  -webkit-line-clamp:6;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-}
-
-.hero-autor{
-  margin-top:18px;
-  color:#ddd;
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+padding:50px 42px;
+background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
 }
 
 .link-titular{
-  text-decoration:none;
-  color:inherit;
+text-decoration:none;
+color:inherit;
+}
+
+.hero-titular{
+font-family:Georgia,serif;
+color:white;
+font-size:2.2rem;
+margin-bottom:12px;
+}
+
+.hero-subtitulo{
+color:#eee;
+max-width:760px;
+line-height:1.6;
+
+display:-webkit-box;
+-webkit-line-clamp:6;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}
+
+.hero-autor{
+margin-top:18px;
+color:#ddd;
 }
 
 .desarrollo-principal{
-  padding:34px 42px 10px;
+padding:34px 42px 10px;
 }
 
 .desarrollo-contenido{
-  max-width:920px;
+max-width:920px;
 }
 
 .frase-destacada{
-  font-family:Georgia;
-  font-size:1.45rem;
-  margin-bottom:24px;
+font-family:Georgia;
+font-size:1.45rem;
+margin-bottom:24px;
 }
 
 .texto-principal{
-  font-family:Georgia;
-  font-size:1.1rem;
-  line-height:1.9;
+font-family:Georgia;
+font-size:1.1rem;
+line-height:1.9;
 }
 
 .secundarias{
-  padding:30px;
+padding:30px;
 }
 
 .titulo-seccion{
-  font-size:1.4rem;
-  margin-bottom:22px;
-  border-left:6px solid #0057b8;
-  padding-left:12px;
+font-size:1.4rem;
+margin-bottom:22px;
+border-left:6px solid #0057b8;
+padding-left:12px;
 }
 
 .secundarias-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
 }
 
 .noticia-secundaria{
-  background:white;
-  border-radius:8px;
-  overflow:hidden;
-  box-shadow:0 4px 18px rgba(0,0,0,.08);
+background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 4px 18px rgba(0,0,0,.08);
 }
 
 .noticia-secundaria img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
 .noticia-contenido{
-  padding:18px;
+padding:18px;
 }
 
 .noticia-secundaria h3{
-  font-family:Georgia;
-  margin-bottom:8px;
+font-family:Georgia;
+margin-bottom:8px;
 }
 
 .autor-sec{
-  font-size:.74rem;
-  color:#777;
-  margin-bottom:12px;
+font-size:.74rem;
+color:#777;
+margin-bottom:12px;
 }
 
 .noticia-secundaria p{
+color:#555;
+line-height:1.6;
 
-  color:#555;
-  line-height:1.6;
-
-  display:-webkit-box;
-  -webkit-line-clamp:5;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-
+display:-webkit-box;
+-webkit-line-clamp:5;
+-webkit-box-orient:vertical;
+overflow:hidden;
 }
 
 /* HISTÓRICO */
 
 .archivo-historico{
-
 padding:20px 30px 40px;
 display:flex;
 justify-content:center;
-
 }
 
 .boton-historico{
-
 width:100%;
 max-width:850px;
-
-background:linear-gradient(
-135deg,
-#002b5c,
-#00448f
-);
-
+background:linear-gradient(135deg,#002b5c,#00448f);
 color:white;
 text-decoration:none;
-
 padding:26px;
-
 border-radius:24px;
-
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
-
-box-shadow:
-0 12px 40px rgba(0,0,0,.12);
-
-transition:.30s;
-
-}
-
-.boton-historico:hover{
-transform:translateY(-4px);
+box-shadow:0 12px 40px rgba(0,0,0,.12);
 }
 
 .historico-mini{
-
 font-size:.72rem;
 opacity:.7;
 letter-spacing:2px;
 margin-bottom:8px;
-
 }
 
 .historico-texto{
-
 font-size:1.5rem;
 font-weight:800;
-
 }
 
 .historico-sub{
-
 margin-top:8px;
 opacity:.8;
-
 }
 
 .flecha{
-
 font-size:2.8rem;
-
 }
 
 .footer{
-
 background:#002b5c;
 color:white;
 padding:28px;
-
 }
 
 .footer-superior{
-
 display:flex;
 justify-content:space-between;
-
 }
 
 .footer-logo{
-
 height:55px;
-
 }
 
 @media(max-width:700px){
@@ -350,18 +300,6 @@ height:420px;
 
 .hero-overlay{
 padding:20px;
-}
-
-.archivo-historico{
-padding:16px;
-}
-
-.boton-historico{
-
-flex-direction:column;
-align-items:flex-start;
-gap:16px;
-
 }
 
 }
@@ -396,8 +334,7 @@ Segurtasunaren eta poliziaren aktualitatea
 
 </div>
 
-<img class="logo-imagen"
-src="imagenes/logo2.png">
+<img class="logo-imagen" src="imagenes/logo2.png">
 
 </div>
 
@@ -408,12 +345,10 @@ src="imagenes/logo2.png">
 <div class="fecha" id="fecha"></div>
 
 <nav class="menu">
-
 <a href="#">SEGURIDAD</a>
 <a href="#">ACTUALIDAD</a>
 <a href="#">ECONOMÍA</a>
 <a href="#">CULTURA</a>
-
 </nav>
 
 </div>
@@ -422,13 +357,11 @@ src="imagenes/logo2.png">
 
 <section class="hero">
 
-<img id="imagenPrincipal"
-src="imagenes/1.jpg">
+<img id="imagenPrincipal" src="imagenes/1.jpg">
 
 <div class="hero-overlay">
 
-<a href="noticia1.html"
-class="link-titular">
+<a href="noticia1.html" class="link-titular">
 
 <h1 class="hero-titular"
 id="titular"></h1>
@@ -466,12 +399,14 @@ id="textoPrincipal"></div>
 Noticias destacadas
 </h2>
 
-<div class="secundarias-grid" id="secGrid">
+<div class="secundarias-grid">
 
 <article class="noticia-secundaria">
 <img id="imgSec1">
 <div class="noticia-contenido">
+<a href="noticia2.html" class="link-titular">
 <h3 id="titSec1"></h3>
+</a>
 <div class="autor-sec">R.E.</div>
 <p id="txtSec1"></p>
 </div>
@@ -480,7 +415,9 @@ Noticias destacadas
 <article class="noticia-secundaria">
 <img id="imgSec2">
 <div class="noticia-contenido">
+<a href="noticia3.html" class="link-titular">
 <h3 id="titSec2"></h3>
+</a>
 <div class="autor-sec">R.E.</div>
 <p id="txtSec2"></p>
 </div>
@@ -489,7 +426,9 @@ Noticias destacadas
 <article class="noticia-secundaria">
 <img id="imgSec3">
 <div class="noticia-contenido">
+<a href="noticia4.html" class="link-titular">
 <h3 id="titSec3"></h3>
+</a>
 <div class="autor-sec">R.E.</div>
 <p id="txtSec3"></p>
 </div>
@@ -498,7 +437,9 @@ Noticias destacadas
 <article class="noticia-secundaria">
 <img id="imgSec4">
 <div class="noticia-contenido">
+<a href="noticia5.html" class="link-titular">
 <h3 id="titSec4"></h3>
+</a>
 <div class="autor-sec">R.E.</div>
 <p id="txtSec4"></p>
 </div>
@@ -507,7 +448,9 @@ Noticias destacadas
 <article class="noticia-secundaria">
 <img id="imgSec5">
 <div class="noticia-contenido">
+<a href="noticia6.html" class="link-titular">
 <h3 id="titSec5"></h3>
+</a>
 <div class="autor-sec">R.E.</div>
 <p id="txtSec5"></p>
 </div>
@@ -516,7 +459,9 @@ Noticias destacadas
 <article class="noticia-secundaria">
 <img id="imgSec6">
 <div class="noticia-contenido">
+<a href="noticia7.html" class="link-titular">
 <h3 id="titSec6"></h3>
+</a>
 <div class="autor-sec">R.E.</div>
 <p id="txtSec6"></p>
 </div>
@@ -528,8 +473,7 @@ Noticias destacadas
 
 <section class="archivo-historico">
 
-<a href="contra.html"
-class="boton-historico">
+<a href="contra.html" class="boton-historico">
 
 <div>
 
@@ -593,33 +537,21 @@ fetch("noticias.json")
 
 .then(data=>{
 
-document.getElementById("titular")
-.innerText=data.principal.titular;
-
-document.getElementById("subtitulo")
-.innerText=data.principal.subtitulo;
-
-document.getElementById("imagenPrincipal")
-.src=data.principal.imagen;
-
-document.getElementById("frasePrincipal")
-.innerText=data.principal.frase;
-
-document.getElementById("textoPrincipal")
-.innerText=data.principal.texto;
+document.getElementById("titular").innerText=data.principal.titular;
+document.getElementById("subtitulo").innerText=data.principal.subtitulo;
+document.getElementById("imagenPrincipal").src=data.principal.imagen;
+document.getElementById("frasePrincipal").innerText=data.principal.frase;
+document.getElementById("textoPrincipal").innerText=data.principal.texto;
 
 for(let i=0;i<6;i++){
 
-document.getElementById(
-'imgSec'+(i+1))
+document.getElementById('imgSec'+(i+1))
 .src=data.secundarias[i].imagen;
 
-document.getElementById(
-'titSec'+(i+1))
+document.getElementById('titSec'+(i+1))
 .innerText=data.secundarias[i].titular;
 
-document.getElementById(
-'txtSec'+(i+1))
+document.getElementById('txtSec'+(i+1))
 .innerText=data.secundarias[i].texto;
 
 }
