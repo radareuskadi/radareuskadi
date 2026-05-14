@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Editor noticias2.json</title>
+
+<style>
+
+body{
+background:#e9edf2;
+font-family:Arial;
+padding:30px;
+}
+
+.contenedor{
+max-width:1100px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+margin-bottom:25px;
+color:#002b5c;
+}
+
+.bloque{
+margin-bottom:30px;
+padding:20px;
+border:1px solid #ddd;
+border-radius:12px;
+}
+
+h2{
+margin-bottom:15px;
+color:#0057b8;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+margin-bottom:6px;
+}
+
+input,textarea{
+
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:14px;
+
+}
+
+textarea{
+height:120px;
+resize:vertical;
+}
+
+button{
+
+background:#0057b8;
+color:white;
+border:none;
+padding:14px 22px;
+border-radius:8px;
+font-size:15px;
+cursor:pointer;
+margin-right:10px;
+
+}
+
+button:hover{
+background:#003d80;
+}
+
+pre{
+
+margin-top:30px;
+background:#111;
+color:#5cff77;
+padding:20px;
+border-radius:10px;
+overflow:auto;
+white-space:pre-wrap;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="contenedor">
+
+<h1>Editor noticias2.json</h1>
+
+<div class="bloque">
+
+<h2>Noticia principal</h2>
+
+<label>Titular</label>
+<input id="principalTitular">
+
+<label>Texto</label>
+<textarea id="principalTexto"></textarea>
+
+</div>
+
+<div id="secundarias"></div>
+
+<button onclick="generar()">
+Generar JSON
+</button>
+
+<button onclick="descargar()">
+Descargar noticias2.json
+</button>
+
+<pre id="resultado"></pre>
+
+</div>
+
+<script>
+
+const datosIniciales={
+
+principal:{
+titular:"Crece el malestar por la posible revocación de comisiones en Tráfico e Investigación",
+texto:"La incertidumbre continúa aumentando entre numerosos agentes tras conocerse posibles cambios."
+},
+
+secundarias:[
+
+{
+titular:"Agentes cuestionan la falta de criterios claros",
+texto:"Diversos funcionarios consideran necesario conocer los criterios aplicados."
+},
+
+{
+titular:"Preocupación por plazas especializadas",
+texto:"La posibilidad de reorganizaciones internas genera dudas."
+},
+
+{
+titular:"Debate interno sobre comisiones",
+texto:"Se reclama una revisión del modelo actual."
+},
+
+{
+titular:"La experiencia centra el debate",
+texto:"Agentes consideran que el conocimiento adquirido debe valorarse."
+},
+
+{
+titular:"Reclaman información oficial",
+texto:"La ausencia de comunicaciones incrementa rumores."
+},
+
+{
+titular:"Dudas sobre futuras necesidades",
+texto:"Algunos puestos podrían responder a necesidades estructurales."
+},
+
+{
+titular:"Pendientes de nuevas comunicaciones",
+texto:"Los próximos días serán claves."
+}
+
+]
+
+};
+
+document.getElementById(
+'principalTitular'
+).value=
+datosIniciales.principal.titular;
+
+document.getElementById(
+'principalTexto'
+).value=
+datosIniciales.principal.texto;
+
+
+const zona=
+document.getElementById(
+'secundarias'
+);
+
+datosIniciales.secundarias
+.forEach((n,i)=>{
+
+zona.innerHTML+=`
+
+<div class="bloque">
+
+<h2>
+Noticia ${i+1}
+</h2>
+
+<label>Titular</label>
+
+<input
+id="titular${i}">
+
+<label>Texto</label>
+
+<textarea
+id="texto${i}">
+</textarea>
+
+</div>
+
+`;
+
+setTimeout(()=>{
+
+document.getElementById(
+`titular${i}`
+).value=n.titular;
+
+document.getElementById(
+`texto${i}`
+).value=n.texto;
+
+},50);
+
+});
+
+let jsonGenerado={};
+
+function generar(){
+
+jsonGenerado={
+
+principal:{
+
+titular:
+document.getElementById(
+'principalTitular'
+).value,
+
+texto:
+document.getElementById(
+'principalTexto'
+).value
+
+},
+
+secundarias:[]
+
+};
+
+for(let i=0;i<7;i++){
+
+jsonGenerado.secundarias.push({
+
+titular:
+document.getElementById(
+`titular${i}`
+).value,
+
+texto:
+document.getElementById(
+`texto${i}`
+).value
+
+});
+
+}
+
+document.getElementById(
+'resultado'
+).innerText=
+
+JSON.stringify(
+jsonGenerado,
+null,
+2
+);
+
+}
+
+function descargar(){
+
+generar();
+
+const blob=
+new Blob(
+[
+JSON.stringify(
+jsonGenerado,
+null,
+2
+)
+],
+{
+type:"application/json"
+}
+);
+
+const a=
+document.createElement(
+"a"
+);
+
+a.href=
+URL.createObjectURL(
+blob
+);
+
+a.download=
+"noticias2.json";
+
+a.click();
+
+}
+
+</script>
+
+</body>
+</html>

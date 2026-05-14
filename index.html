@@ -8,51 +8,24 @@
 
 <title>RADAR EUSKADI</title>
 
-<!-- OPEN GRAPH -->
-
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="RADAR EUSKADI">
+<meta property="og:image:secure_url" content="https://radareuskadi.netlify.app/imagenes/1.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://radareuskadi.netlify.app/">
+<meta property="og:locale" content="es_ES">
 
-<meta property="og:site_name"
-      content="RADAR EUSKADI">
+<meta name="twitter:card" content="summary_large_image">
 
-<meta property="og:image:secure_url"
-      content="https://radareuskadi.netlify.app/imagenes/1.jpg">
+<meta property="og:title" content="RADAR EUSKADI">
+<meta property="og:description" content="Información policial y de seguridad actualizada">
+<meta property="og:image" content="imagenes/1.jpg">
 
-<meta property="og:image:type"
-      content="image/jpeg">
-
-<meta property="og:image:width"
-      content="1200">
-
-<meta property="og:image:height"
-      content="630">
-
-<meta property="og:url"
-      content="https://radareuskadi.netlify.app/">
-
-<meta property="og:locale"
-      content="es_ES">
-
-<meta name="twitter:card"
-      content="summary_large_image">
-
-<meta property="og:title"
-content="RADAR EUSKADI">
-
-<meta property="og:description"
-content="Información policial y de seguridad actualizada">
-
-<meta property="og:image"
-content="imagenes/1.jpg">
-
-<meta name="twitter:title"
-content="RADAR EUSKADI">
-
-<meta name="twitter:description"
-content="Información policial y de seguridad actualizada">
-
-<meta name="twitter:image"
-content="imagenes/1.jpg">
+<meta name="twitter:title" content="RADAR EUSKADI">
+<meta name="twitter:description" content="Información policial y de seguridad actualizada">
+<meta name="twitter:image" content="imagenes/1.jpg">
 
 <style>
 
@@ -64,7 +37,7 @@ content="imagenes/1.jpg">
 
 body{
   background:#dfe4ea;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   color:#111;
 }
 
@@ -76,20 +49,16 @@ body{
   min-height:100vh;
 }
 
-/* ÚLTIMA HORA */
-
 .ultima-hora{
   width:100%;
   background:#b30000;
   color:white;
-  font-size:0.78rem;
+  font-size:.78rem;
   padding:9px 22px;
   font-weight:bold;
-  letter-spacing:0.5px;
+  letter-spacing:.5px;
   text-transform:uppercase;
 }
-
-/* CABECERA */
 
 .cabecera{
   width:100%;
@@ -102,99 +71,61 @@ body{
   width:100%;
   max-width:1280px;
   margin:auto;
-  padding:18px 42px 8px 42px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:20px;
+  padding:18px 42px 8px;
 }
 
 .logo-zona{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
-  width:100%;
-  gap:20px;
-}
-
-.bloque-izquierda{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
 }
 
 .logo-texto{
   font-size:3rem;
   font-weight:900;
-  letter-spacing:1px;
-  line-height:0.9;
+  line-height:.9;
 }
 
 .sublogo{
   margin-top:6px;
   color:#c8d3df;
-  font-size:0.9rem;
-}
-
-.bloque-derecha{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
 }
 
 .logo-imagen{
   width:220px;
-  object-fit:contain;
 }
 
 .barra-inferior{
-  width:100%;
-  max-width:1280px;
-  margin:auto;
-  padding:0 42px 14px 42px;
+  padding:0 42px 14px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  gap:20px;
 }
 
 .fecha{
   color:#c8d3df;
-  font-size:0.78rem;
+  font-size:.78rem;
 }
 
 .menu{
   display:flex;
   gap:18px;
-  flex-wrap:wrap;
 }
 
 .menu a{
   color:#c8d3df;
   text-decoration:none;
-  font-size:0.72rem;
+  font-size:.72rem;
   font-weight:bold;
-  letter-spacing:0.7px;
-  transition:0.2s;
-  text-transform:uppercase;
 }
-
-.menu a:hover{
-  color:white;
-}
-
-/* HERO */
 
 .hero{
   position:relative;
-  overflow:hidden;
 }
 
 .hero img{
   width:100%;
   height:650px;
   object-fit:cover;
-  display:block;
 }
 
 .hero-overlay{
@@ -203,40 +134,31 @@ body{
   bottom:0;
   width:100%;
   padding:50px 42px;
-  background:linear-gradient(to top, rgba(0,0,0,0.90), rgba(0,0,0,0));
+  background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
 }
 
 .hero-titular{
-  font-family:Georgia, serif;
-  font-size:2.2rem;
+  font-family:Georgia,serif;
   color:white;
-  line-height:1.15;
+  font-size:2.2rem;
   max-width:920px;
   margin-bottom:12px;
-
-  display:-webkit-box;
-  -webkit-line-clamp:8;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
 }
 
 .hero-subtitulo{
-  font-size:1.02rem;
-  color:#e5e5e5;
+  color:#eee;
   max-width:760px;
-  line-height:1.5;
+  line-height:1.6;
 
   display:-webkit-box;
-  -webkit-line-clamp:8;
+  -webkit-line-clamp:6;
   -webkit-box-orient:vertical;
   overflow:hidden;
 }
 
 .hero-autor{
   margin-top:18px;
-  color:#d2d2d2;
-  font-size:0.82rem;
-  letter-spacing:0.4px;
+  color:#ddd;
 }
 
 .link-titular{
@@ -244,11 +166,8 @@ body{
   color:inherit;
 }
 
-/* DESARROLLO PRINCIPAL */
-
 .desarrollo-principal{
-  padding:34px 42px 10px 42px;
-  background:white;
+  padding:34px 42px 10px;
 }
 
 .desarrollo-contenido{
@@ -256,22 +175,16 @@ body{
 }
 
 .frase-destacada{
-  font-family:Georgia, serif;
+  font-family:Georgia;
   font-size:1.45rem;
-  line-height:1.45;
   margin-bottom:24px;
-  color:#111;
-  font-weight:bold;
 }
 
 .texto-principal{
-  font-family:Georgia, serif;
+  font-family:Georgia;
   font-size:1.1rem;
   line-height:1.9;
-  color:#222;
 }
-
-/* SECUNDARIAS */
 
 .secundarias{
   padding:30px;
@@ -286,7 +199,7 @@ body{
 
 .secundarias-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
 
@@ -294,19 +207,13 @@ body{
   background:white;
   border-radius:8px;
   overflow:hidden;
-  box-shadow:0 4px 18px rgba(0,0,0,0.08);
-  transition:0.25s;
-}
-
-.noticia-secundaria:hover{
-  transform:translateY(-4px);
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
 }
 
 .noticia-secundaria img{
   width:100%;
   height:220px;
   object-fit:cover;
-  display:block;
 }
 
 .noticia-contenido{
@@ -314,173 +221,148 @@ body{
 }
 
 .noticia-secundaria h3{
-  font-family:Georgia, serif;
-  font-size:1.05rem;
-  line-height:1.3;
+  font-family:Georgia;
   margin-bottom:8px;
-
-  display:-webkit-box;
-  -webkit-line-clamp:10;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
 }
 
 .autor-sec{
-  font-size:0.74rem;
+  font-size:.74rem;
   color:#777;
   margin-bottom:12px;
-  letter-spacing:0.4px;
 }
 
 .noticia-secundaria p{
+
   color:#555;
-  line-height:1.5;
-  font-size:0.92rem;
+  line-height:1.6;
 
   display:-webkit-box;
-  -webkit-line-clamp:8;
+  -webkit-line-clamp:5;
   -webkit-box-orient:vertical;
   overflow:hidden;
+
 }
 
-/* FOOTER */
+/* HISTÓRICO */
+
+.archivo-historico{
+
+padding:20px 30px 40px;
+display:flex;
+justify-content:center;
+
+}
+
+.boton-historico{
+
+width:100%;
+max-width:850px;
+
+background:linear-gradient(
+135deg,
+#002b5c,
+#00448f
+);
+
+color:white;
+text-decoration:none;
+
+padding:26px;
+
+border-radius:24px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:
+0 12px 40px rgba(0,0,0,.12);
+
+transition:.30s;
+
+}
+
+.boton-historico:hover{
+transform:translateY(-4px);
+}
+
+.historico-mini{
+
+font-size:.72rem;
+opacity:.7;
+letter-spacing:2px;
+margin-bottom:8px;
+
+}
+
+.historico-texto{
+
+font-size:1.5rem;
+font-weight:800;
+
+}
+
+.historico-sub{
+
+margin-top:8px;
+opacity:.8;
+
+}
+
+.flecha{
+
+font-size:2.8rem;
+
+}
 
 .footer{
-  background:#002b5c;
-  color:white;
-  margin-top:30px;
-  padding:28px;
+
+background:#002b5c;
+color:white;
+padding:28px;
+
 }
 
 .footer-superior{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
 
-.footer-texto{
-  font-size:0.82rem;
-  line-height:1.7;
+display:flex;
+justify-content:space-between;
+
 }
 
 .footer-logo{
-  height:55px;
-  object-fit:contain;
-}
 
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-  .secundarias-grid{
-    grid-template-columns:1fr 1fr;
-  }
+height:55px;
 
 }
 
 @media(max-width:700px){
 
-  body{
-    background:white;
-  }
+.secundarias-grid{
+grid-template-columns:1fr;
+}
 
-  .cabecera-superior{
-    padding:16px;
-  }
+.hero img{
+height:420px;
+}
 
-  .logo-zona{
-    flex-direction:column;
-    gap:18px;
-  }
+.hero-overlay{
+padding:20px;
+}
 
-  .bloque-derecha{
-    width:100%;
-    align-items:flex-start;
-  }
+.archivo-historico{
+padding:16px;
+}
 
-  .logo-imagen{
-    width:150px;
-  }
+.boton-historico{
 
-  .logo-texto{
-    font-size:1.9rem;
-  }
+flex-direction:column;
+align-items:flex-start;
+gap:16px;
 
-  .sublogo{
-    font-size:0.72rem;
-  }
-
-  .barra-inferior{
-    padding:0 16px 14px 16px;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-  }
-
-  .menu{
-    gap:12px;
-  }
-
-  .menu a{
-    font-size:0.62rem;
-  }
-
-  .hero img{
-    height:420px;
-  }
-
-  .hero-overlay{
-    padding:22px 18px;
-  }
-
-  .hero-titular{
-    font-size:1.6rem;
-  }
-
-  .hero-subtitulo{
-    font-size:0.92rem;
-  }
-
-  .desarrollo-principal{
-    padding:24px 18px 0 18px;
-  }
-
-  .frase-destacada{
-    font-size:1.12rem;
-    line-height:1.6;
-  }
-
-  .texto-principal{
-    font-size:1rem;
-    line-height:1.8;
-  }
-
-  .secundarias{
-    padding:16px;
-  }
-
-  .secundarias-grid{
-    grid-template-columns:1fr;
-    gap:18px;
-  }
-
-  .noticia-secundaria img{
-    height:190px;
-  }
-
-  .noticia-secundaria h3{
-    font-size:0.98rem;
-  }
-
-  .footer{
-    padding:18px 16px;
-  }
-
-  .footer-logo{
-    height:42px;
-  }
+}
 
 }
 
@@ -493,180 +375,199 @@ body{
 <div class="contenedor">
 
 <div class="ultima-hora">
-  Información policial y de seguridad actualizada
+Información policial y de seguridad actualizada
 </div>
 
 <header class="cabecera">
 
-  <div class="cabecera-superior">
+<div class="cabecera-superior">
 
-    <div class="logo-zona">
+<div class="logo-zona">
 
-      <div class="bloque-izquierda">
+<div>
 
-        <div class="logo-texto">
-          RADAR EUSKADI
-        </div>
+<div class="logo-texto">
+RADAR EUSKADI
+</div>
 
-        <div class="sublogo">
-          Segurtasunaren eta poliziaren aktualitatea
-        </div>
+<div class="sublogo">
+Segurtasunaren eta poliziaren aktualitatea
+</div>
 
-      </div>
+</div>
 
-      <div class="bloque-derecha">
+<img class="logo-imagen"
+src="imagenes/logo2.png">
 
-        <img class="logo-imagen"
-             src="imagenes/logo2.png"
-             alt="RADAR EUSKADI">
+</div>
 
-      </div>
+</div>
 
-    </div>
+<div class="barra-inferior">
 
-  </div>
+<div class="fecha" id="fecha"></div>
 
-  <div class="barra-inferior">
+<nav class="menu">
 
-    <div class="fecha" id="fecha"></div>
+<a href="#">SEGURIDAD</a>
+<a href="#">ACTUALIDAD</a>
+<a href="#">ECONOMÍA</a>
+<a href="#">CULTURA</a>
 
-    <nav class="menu">
-      <a href="javascript:void(0)">SEGURIDAD</a>
-      <a href="https://bilbao24horas.com/">ACTUALIDAD</a>
-      <a href="https://gananzia.com/">ECONOMÍA</a>
-      <a href="https://culturabai.es/">CULTURA</a>
-    </nav>
+</nav>
 
-  </div>
+</div>
 
 </header>
 
 <section class="hero">
 
-  <img id="imagenPrincipal"
-       src="imagenes/1.jpg"
-       alt="Noticia principal">
+<img id="imagenPrincipal"
+src="imagenes/1.jpg">
 
-  <div class="hero-overlay">
+<div class="hero-overlay">
 
-    <a href="noticia1.html" class="link-titular">
-      <h1 class="hero-titular" id="titular"></h1>
-    </a>
+<a href="noticia1.html"
+class="link-titular">
 
-    <div class="hero-subtitulo" id="subtitulo"></div>
+<h1 class="hero-titular"
+id="titular"></h1>
 
-    <div class="hero-autor">
-      R.E.
-    </div>
+</a>
 
-  </div>
+<div class="hero-subtitulo"
+id="subtitulo"></div>
+
+<div class="hero-autor">
+R.E.
+</div>
+
+</div>
 
 </section>
 
 <section class="desarrollo-principal">
 
-  <div class="desarrollo-contenido">
+<div class="desarrollo-contenido">
 
-    <div class="frase-destacada" id="frasePrincipal"></div>
+<div class="frase-destacada"
+id="frasePrincipal"></div>
 
-    <div class="texto-principal" id="textoPrincipal"></div>
+<div class="texto-principal"
+id="textoPrincipal"></div>
 
-  </div>
+</div>
 
 </section>
 
 <section class="secundarias">
 
-  <h2 class="titulo-seccion">
-    Noticias destacadas
-  </h2>
+<h2 class="titulo-seccion">
+Noticias destacadas
+</h2>
 
-  <div class="secundarias-grid">
+<div class="secundarias-grid" id="secGrid">
 
-    <article class="noticia-secundaria">
-      <img src="imagenes/2.jpg" id="imgSec1" alt="">
-      <div class="noticia-contenido">
-        <a href="noticia2.html" class="link-titular">
-          <h3 id="titSec1"></h3>
-        </a>
-        <div class="autor-sec">R.E.</div>
-        <p id="txtSec1"></p>
-      </div>
-    </article>
+<article class="noticia-secundaria">
+<img id="imgSec1">
+<div class="noticia-contenido">
+<h3 id="titSec1"></h3>
+<div class="autor-sec">R.E.</div>
+<p id="txtSec1"></p>
+</div>
+</article>
 
-    <article class="noticia-secundaria">
-      <img src="imagenes/3.jpg" id="imgSec2" alt="">
-      <div class="noticia-contenido">
-        <a href="noticia3.html" class="link-titular">
-          <h3 id="titSec2"></h3>
-        </a>
-        <div class="autor-sec">R.E.</div>
-        <p id="txtSec2"></p>
-      </div>
-    </article>
+<article class="noticia-secundaria">
+<img id="imgSec2">
+<div class="noticia-contenido">
+<h3 id="titSec2"></h3>
+<div class="autor-sec">R.E.</div>
+<p id="txtSec2"></p>
+</div>
+</article>
 
-    <article class="noticia-secundaria">
-      <img src="imagenes/4.jpg" id="imgSec3" alt="">
-      <div class="noticia-contenido">
-        <a href="noticia4.html" class="link-titular">
-          <h3 id="titSec3"></h3>
-        </a>
-        <div class="autor-sec">R.E.</div>
-        <p id="txtSec3"></p>
-      </div>
-    </article>
+<article class="noticia-secundaria">
+<img id="imgSec3">
+<div class="noticia-contenido">
+<h3 id="titSec3"></h3>
+<div class="autor-sec">R.E.</div>
+<p id="txtSec3"></p>
+</div>
+</article>
 
-    <article class="noticia-secundaria">
-      <img src="imagenes/5.jpg" id="imgSec4" alt="">
-      <div class="noticia-contenido">
-        <a href="noticia5.html" class="link-titular">
-          <h3 id="titSec4"></h3>
-        </a>
-        <div class="autor-sec">R.E.</div>
-        <p id="txtSec4"></p>
-      </div>
-    </article>
+<article class="noticia-secundaria">
+<img id="imgSec4">
+<div class="noticia-contenido">
+<h3 id="titSec4"></h3>
+<div class="autor-sec">R.E.</div>
+<p id="txtSec4"></p>
+</div>
+</article>
 
-    <article class="noticia-secundaria">
-      <img src="imagenes/6.jpg" id="imgSec5" alt="">
-      <div class="noticia-contenido">
-        <a href="noticia6.html" class="link-titular">
-          <h3 id="titSec5"></h3>
-        </a>
-        <div class="autor-sec">R.E.</div>
-        <p id="txtSec5"></p>
-      </div>
-    </article>
+<article class="noticia-secundaria">
+<img id="imgSec5">
+<div class="noticia-contenido">
+<h3 id="titSec5"></h3>
+<div class="autor-sec">R.E.</div>
+<p id="txtSec5"></p>
+</div>
+</article>
 
-    <article class="noticia-secundaria">
-      <img src="imagenes/7.jpg" id="imgSec6" alt="">
-      <div class="noticia-contenido">
-        <a href="noticia7.html" class="link-titular">
-          <h3 id="titSec6"></h3>
-        </a>
-        <div class="autor-sec">R.E.</div>
-        <p id="txtSec6"></p>
-      </div>
-    </article>
+<article class="noticia-secundaria">
+<img id="imgSec6">
+<div class="noticia-contenido">
+<h3 id="titSec6"></h3>
+<div class="autor-sec">R.E.</div>
+<p id="txtSec6"></p>
+</div>
+</article>
 
-  </div>
+</div>
+
+</section>
+
+<section class="archivo-historico">
+
+<a href="contra.html"
+class="boton-historico">
+
+<div>
+
+<div class="historico-mini">
+ARCHIVO
+</div>
+
+<div class="historico-texto">
+Noticias anteriores
+</div>
+
+<div class="historico-sub">
+Consulta noticias y contenidos publicados anteriormente
+</div>
+
+</div>
+
+<div class="flecha">
+→
+</div>
+
+</a>
 
 </section>
 
 <footer class="footer">
 
-  <div class="footer-superior">
+<div class="footer-superior">
 
-    <div class="footer-texto">
-      RADAR EUSKADI · Actualidad policial y sindical<br>
-      Contacto · info@radareuskadi.com
-    </div>
+<div>
+RADAR EUSKADI · Actualidad policial y sindical<br>
+Contacto · info@radareuskadi.com
+</div>
 
-    <img class="footer-logo"
-         src="imagenes/logo.png"
-         alt="RADAR EUSKADI">
+<img class="footer-logo"
+src="imagenes/logo.png">
 
-  </div>
+</div>
 
 </footer>
 
@@ -674,49 +575,54 @@ body{
 
 <script>
 
-const hoy = new Date();
+const hoy=new Date();
 
-document.getElementById('fecha').innerText =
-  hoy.toLocaleDateString('eu-ES', {
-    weekday:'long',
-    year:'numeric',
-    month:'long',
-    day:'numeric'
-  });
+document.getElementById("fecha")
+.innerText=hoy.toLocaleDateString(
+'eu-ES',
+{
+weekday:'long',
+year:'numeric',
+month:'long',
+day:'numeric'
+});
 
-fetch('noticias.json')
+fetch("noticias.json")
 
-.then(response => response.json())
+.then(r=>r.json())
 
-.then(data => {
+.then(data=>{
 
-  document.getElementById('titular').innerText =
-    data.principal.titular;
+document.getElementById("titular")
+.innerText=data.principal.titular;
 
-  document.getElementById('subtitulo').innerText =
-    data.principal.subtitulo;
+document.getElementById("subtitulo")
+.innerText=data.principal.subtitulo;
 
-  document.getElementById('imagenPrincipal').src =
-    data.principal.imagen;
+document.getElementById("imagenPrincipal")
+.src=data.principal.imagen;
 
-  document.getElementById('frasePrincipal').innerText =
-    data.principal.frase;
+document.getElementById("frasePrincipal")
+.innerText=data.principal.frase;
 
-  document.getElementById('textoPrincipal').innerText =
-    data.principal.texto;
+document.getElementById("textoPrincipal")
+.innerText=data.principal.texto;
 
-  for(let i = 0; i < 6; i++){
+for(let i=0;i<6;i++){
 
-    document.getElementById('imgSec' + (i+1)).src =
-      data.secundarias[i].imagen;
+document.getElementById(
+'imgSec'+(i+1))
+.src=data.secundarias[i].imagen;
 
-    document.getElementById('titSec' + (i+1)).innerText =
-      data.secundarias[i].titular;
+document.getElementById(
+'titSec'+(i+1))
+.innerText=data.secundarias[i].titular;
 
-    document.getElementById('txtSec' + (i+1)).innerText =
-      data.secundarias[i].texto;
+document.getElementById(
+'txtSec'+(i+1))
+.innerText=data.secundarias[i].texto;
 
-  }
+}
 
 });
 

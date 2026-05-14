@@ -1,0 +1,50 @@
+{
+  "principal": {
+    "titular": "Crece el malestar por la posible revocación de comisiones en Tráfico e Investigación",
+    "texto": "La incertidumbre continúa aumentando entre numerosos agentes tras conocerse posibles cambios que afectarían a comisiones de servicio en distintas unidades. La preocupación se centra especialmente en el impacto personal y profesional que estas decisiones podrían provocar tras años cubriendo necesidades estructurales."
+  },
+
+  "secundarias": [
+
+    {
+      "titular": "Agentes cuestionan la falta de criterios claros en cambios de destino",
+      "texto": "Diversos funcionarios consideran necesario conocer qué criterios organizativos se están aplicando en decisiones que afectan directamente a la estabilidad laboral y familiar de numerosos efectivos."
+    },
+
+    {
+      "titular": "Preocupación por el futuro de varias plazas en unidades especializadas",
+      "texto": "La posibilidad de reorganizaciones internas ha generado dudas entre agentes destinados en puestos que durante años han cubierto necesidades permanentes."
+    },
+
+    {
+      "titular": "Aumenta el debate interno sobre el modelo de comisiones de servicio",
+      "texto": "Diferentes voces dentro del ámbito policial reclaman una revisión del sistema actual para ofrecer mayor transparencia y seguridad jurídica."
+    },
+
+    {
+      "titular": "La experiencia acumulada en unidades específicas centra parte del debate",
+      "texto": "Funcionarios con años de trayectoria consideran que el conocimiento operativo adquirido debería ser tenido en cuenta en futuras reorganizaciones."
+    },
+
+    {
+      "titular": "Reclaman información oficial para reducir rumores entre las unidades",
+      "texto": "La ausencia de comunicaciones claras ha provocado un aumento de consultas y versiones distintas entre agentes destinados en varios territorios."
+    },
+
+    {
+      "titular": "La reorganización de efectivos abre dudas sobre futuras necesidades operativas",
+      "texto": "Algunos agentes consideran que determinados puestos responden a necesidades estructurales y no temporales, por lo que cuestionan posibles cambios."
+    },
+
+    {
+      "titular": "El impacto familiar vuelve al centro del debate sindical",
+      "texto": "Los posibles cambios de destino generan preocupación por las consecuencias que podrían tener sobre conciliación, desplazamientos y organización personal."
+    },
+
+    {
+      "titular": "Unidades de distintos territorios siguen pendientes de nuevas comunicaciones",
+      "texto": "Los próximos días serán claves para conocer posibles listados y aclarar el alcance definitivo de las medidas que puedan adoptarse."
+    }
+
+  ]
+}
